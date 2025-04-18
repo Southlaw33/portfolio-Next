@@ -45,23 +45,21 @@ function Projects() {
         Projects
       </motion.h2>
 
-      <div className="grid gap-10 md:grid-cols-2">
+      <div className="grid gap-10 md:grid-cols-1">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="relative bg-white/80 dark:bg-neutral/70 border-l-4 border-primary rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300 backdrop-blur-sm"
+            className="group relative flex flex-col md:flex-row items-start gap-6 bg-base-200 dark:bg-neutral border border-primary/20 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 backdrop-blur-md"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <div className="flex flex-col h-full">
-              <h3 className="text-xl font-semibold mb-2 text-primary">
+            <div className="flex flex-col flex-grow">
+              <h3 className="text-2xl font-semibold mb-2 text-primary group-hover:underline">
                 {project.title}
               </h3>
-              <p className="text-base-content/80 mb-4">
-                {project.description}
-              </p>
+              <p className="text-base-content/80 mb-4">{project.description}</p>
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.techStack.map((tech, idx) => (
@@ -74,16 +72,14 @@ function Projects() {
                 ))}
               </div>
 
-              <div className="mt-auto">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-primary hover:underline font-medium"
-                >
-                  View Project →
-                </a>
-              </div>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-block text-sm text-primary font-medium hover:underline"
+              >
+                View Project →
+              </a>
             </div>
           </motion.div>
         ))}
