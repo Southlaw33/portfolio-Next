@@ -49,7 +49,7 @@ const About = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
-        Hey there! I'm a passionate developer who loves exploring the
+        Hey there! I&apos;m a passionate developer who loves exploring the
         intersection of creativity and technology.
       </motion.p>
 
