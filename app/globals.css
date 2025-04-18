@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: false;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html[data-theme="dark"] {
+  background: linear-gradient(135deg, #000000f5, #1c211c); /* Dark purple with a hint of orange */
+  color: white;
+}
+
+html[data-theme="light"] {
+  background: linear-gradient(135deg, #a7c5d7, #f7d6e0); /* Soft pastel pink to light blue */
+  color: black;
+}
