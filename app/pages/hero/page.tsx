@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   faGithub,
@@ -10,6 +11,16 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Hero = () => {
+  const router = useRouter();
+
+  const goToContact = () => {
+    router.push("/contact");
+  };
+
+  const openResume = () => {
+    window.open("/resume.pdf", "_blank");
+  };
+
   return (
     <motion.section
       id="profile"
@@ -26,7 +37,7 @@ const Hero = () => {
       >
         <Image
           src="/Untitled.jpg"
-          alt="Atchtuha rao Profile Picture"
+          alt="Atchutha Rao Profile Picture"
           width={170}
           height={180}
           className="rounded-full border-4 border-primary shadow-xl hover:scale-105 transition-all duration-300"
@@ -49,14 +60,34 @@ const Hero = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.6 }}
       >
-        Fullstack AI Developer &mdash; React • Hono • Tailwind • Prisma • Azure
+        A full stack AI developer and a Gen AI enthusiast.
       </motion.p>
 
       <motion.div
-        className="flex gap-6 mt-4"
+        className="flex gap-4 mt-4 mb-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
+      >
+        <button
+          className="btn btn-primary rounded-xl px-4 py-2 text-white bg-primary hover:bg-blue-950 transition"
+          onClick={goToContact}
+        >
+          Connect with me
+        </button>
+        <button
+          className="btn rounded-xl px-4 py-2 bg-base-200 hover:bg-blue-950 transition"
+          onClick={openResume}
+        >
+          My Resume
+        </button>
+      </motion.div>
+
+      <motion.div
+        className="flex gap-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
       >
         <a
           href="https://github.com/Southlaw33"
